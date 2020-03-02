@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6e7cbe93-6ce4-44c2-93ba-63f61391c312" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/GiraffeWebApp/src/GiraffeWebApp/Program.fs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/GiraffeWebApp/src/GiraffeWebApp/WebRoot/main.css" />
+        <option value="$PROJECT_DIR$/GiraffeWebApp/src/GiraffeWebApp/Views/HelloWorld.cshtml.fs" />
+        <option value="$PROJECT_DIR$/GiraffeWebApp/src/GiraffeWebApp/Views/HelloWorld.cshtml" />
+        <option value="$PROJECT_DIR$/GiraffeWebApp/src/GiraffeWebApp/Program.fs" />
+        <option value="$PROJECT_DIR$/GiraffeWebApp/src/GiraffeWebApp/GiraffeWebApp.fsproj" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1YR7ZkUfu6Su5xBnUaHvryFeQe0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Rider.SolutionExplorerActivator" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="GiraffeWebApp" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/GiraffeWebApp/src/GiraffeWebApp/GiraffeWebApp.fsproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6e7cbe93-6ce4-44c2-93ba-63f61391c312" name="Default Changelist" comment="" />
+      <created>1582893610179</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582893610179</updated>
+      <workItem from="1582893611537" duration="6242000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1393" height="290" key="GridCell.Tab.0.bottom" timestamp="1583144416873">
+      <screen x="0" y="23" width="1920" height="1128" />
+    </state>
+    <state width="1393" height="290" key="GridCell.Tab.0.bottom/-1920.0.1920.1200/0.23.1920.1128@0.23.1920.1128" timestamp="1583144416873" />
+    <state width="1393" height="290" key="GridCell.Tab.0.center" timestamp="1583144416873">
+      <screen x="0" y="23" width="1920" height="1128" />
+    </state>
+    <state width="1393" height="290" key="GridCell.Tab.0.center/-1920.0.1920.1200/0.23.1920.1128@0.23.1920.1128" timestamp="1583144416873" />
+    <state width="1393" height="290" key="GridCell.Tab.0.left" timestamp="1583144416872">
+      <screen x="0" y="23" width="1920" height="1128" />
+    </state>
+    <state width="1393" height="290" key="GridCell.Tab.0.left/-1920.0.1920.1200/0.23.1920.1128@0.23.1920.1128" timestamp="1583144416872" />
+    <state width="1393" height="290" key="GridCell.Tab.0.right" timestamp="1583144416873">
+      <screen x="0" y="23" width="1920" height="1128" />
+    </state>
+    <state width="1393" height="290" key="GridCell.Tab.0.right/-1920.0.1920.1200/0.23.1920.1128@0.23.1920.1128" timestamp="1583144416873" />
+    <state x="99" y="343" key="Rider.ProjectTemplateDialog.Size" timestamp="1582893610295">
+      <screen x="0" y="23" width="1920" height="1128" />
+    </state>
+    <state x="99" y="343" key="Rider.ProjectTemplateDialog.Size/-1920.0.1920.1200/0.23.1920.1128@0.23.1920.1128" timestamp="1582893610295" />
+    <state x="547" y="246" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582902099798">
+      <screen x="0" y="23" width="1920" height="1128" />
+    </state>
+    <state x="547" y="246" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/-1920.0.1920.1200/0.23.1920.1128@0.23.1920.1128" timestamp="1582902099798" />
+  </component>
+</project>
