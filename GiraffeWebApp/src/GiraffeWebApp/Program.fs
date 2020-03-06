@@ -7,50 +7,34 @@ open Microsoft.AspNetCore.Hosting
 open Microsoft.Extensions.Logging
 open Microsoft.Extensions.DependencyInjection
 open Giraffe
-open Giraffe.GiraffeViewEngine
 
-// ---------------------------------
-// Models
-// ---------------------------------
-type Message =
-    {
-        Text : string
-    }
+// open GiraffeWebApp.Models
+open GiraffeWebApp.Views
+open GiraffeWebApp.MailboxDemo
+open Microsoft.AspNetCore.Http
 
-// ---------------------------------
-// Views
-// ---------------------------------
-let layout (content: XmlNode list) =
-    html [] [
-        head [] [
-            title []  [ str "Giraffe" ]
-        ]
-        body [] content
-    ]
+let checkHeader: HttpHandler =
+    fun (next: HttpFunc) (ctx: HttpContext) ->
+        match ctx.TryGetRequestHeader "X-MyHeader" with
+        | None -> skipPipeline
+        | Some _ -> next(ctx)
+
+let fetchLines() =
+    printfn "Fetch lines..."
+    lineContainer.PostAndReply ListLines
     
-let renderHelloWorld =
-    let model = { Text = "world" }
-    [
-        div [] [ sprintf "%s" model.Text |> str ]
-    ]
-    |> layout
-    |> htmlView
-
-// ---------------------------------
-// Web app
-// ---------------------------------
 let webApp =
     choose [
         GET >=>
             choose [
                 route "/"      >=> text "hi"
                 route "/hello" >=> renderHelloWorld
+                routef "/hello/%s" renderHelloX
+                route "/secret" >=> checkHeader >=> text "unlocked"
+                route "/lines" >=> warbler(fun _ -> fetchLines() |> renderLines)
             ]
         setStatusCode 404 >=> text "Not Found" ]
 
-// ---------------------------------
-// Error handler
-// ---------------------------------
 let errorHandler (ex : Exception) (logger : ILogger) =
     logger.LogError(ex, "An unhandled exception has occurred while executing the request.")
     clearResponse >=> setStatusCode 500 >=> text ex.Message
@@ -82,6 +66,10 @@ let configureLogging (builder : ILoggingBuilder) =
 let main _ =
     let contentRoot = Directory.GetCurrentDirectory()
     let webRoot     = Path.Combine(contentRoot, "WebRoot")
+    
+    // periodic actions on certain mailbox processors.
+    Async.Start timer
+    
     WebHostBuilder()
         .UseKestrel()
         .UseContentRoot(contentRoot)
