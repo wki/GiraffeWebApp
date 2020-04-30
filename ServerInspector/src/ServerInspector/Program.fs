@@ -1,4 +1,4 @@
-module GiraffeWebApp.App
+module ServerInspector.App
 
 open System
 open System.IO
@@ -8,9 +8,9 @@ open Microsoft.Extensions.Logging
 open Microsoft.Extensions.DependencyInjection
 open Giraffe
 
-// open GiraffeWebApp.Models
-open GiraffeWebApp.Views
-open GiraffeWebApp.MailboxDemo
+// open ServerInspector.Models
+open ServerInspector.Views
+open ServerInspector.MailboxDemo
 open Microsoft.AspNetCore.Http
 
 let checkHeader: HttpHandler =
@@ -22,7 +22,7 @@ let checkHeader: HttpHandler =
 let fetchLines() =
     printfn "Fetch lines..."
     lineContainer.PostAndReply ListLines
-    
+
 let webApp =
     choose [
         GET >=>
@@ -66,19 +66,28 @@ let configureLogging (builder : ILoggingBuilder) =
 let main _ =
     let contentRoot = Directory.GetCurrentDirectory()
     let webRoot     = Path.Combine(contentRoot, "WebRoot")
-    
+
     // periodic actions on certain mailbox processors.
     Async.Start timer
-    
-    WebHostBuilder()
-        .UseKestrel()
-        .UseContentRoot(contentRoot)
-        .UseWebRoot(webRoot)
-        .Configure(Action<IApplicationBuilder> configureApp)
-        .ConfigureServices(configureServices)
-        .ConfigureLogging(configureLogging)
-        .Build()
-        .Run()
-    
+
+    let webTask =
+        WebHostBuilder()
+            .UseKestrel()
+            .UseContentRoot(contentRoot)
+            .UseWebRoot(webRoot)
+            .Configure(Action<IApplicationBuilder> configureApp)
+            .ConfigureServices(configureServices)
+            .ConfigureLogging(configureLogging)
+            .Build()
+            .RunAsync()
+
+    let openInBrowser =
+        async {
+            do! Async.Sleep 500
+            Process.run "open http://localhost:5000"
+        }
+    openInBrowser |> Async.Start
+
+    webTask.Wait()
+
     0
-    

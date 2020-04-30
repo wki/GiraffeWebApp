@@ -1,0 +1,53 @@
+{
+  "name": "X Workers",
+
+  "interval": 60,
+
+  "hosts": [
+    {
+      "hostname": "w1.company.intra",
+      "moniker": "w1"
+    },
+    {
+      "hostname": "w2.company.intra",
+      "moniker": "w2"
+    },
+    {
+      "hostname": "w3.company.intra",
+      "moniker": "w3"
+    }
+  ],
+
+  "processes": [
+    {
+      "name": "log",
+      "command": "ssh {hostname} tail -f path/to/logfile.log",
+      "type": "autorun",
+      "hosts": ["w1", "w2", "w3"]
+    },
+
+    {
+      "name": "status",
+      "command": "ssh {hostname} path/to/some_script.sh",
+      "type": "interval",
+      "hosts": ["w1", "w2", "w3"]
+    },
+
+    {
+      "name": "permission check",
+      "command": "ssh {hostname} path/to/some_script.sh",
+      "type": "manual",
+      "hosts": ["w1", "w2", "w3"]
+    }
+  ],
+
+  "aggregations": [
+    {
+      "name": "Worker logs",
+      "source": "log",
+      "exclude": [
+        "regex [to] (exclude)?"
+      ]
+    }
+  ]
+}

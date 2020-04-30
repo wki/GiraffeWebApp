@@ -1,6 +1,6 @@
-module GiraffeWebApp.Views
+module ServerInspector.Views
 
-open GiraffeWebApp.Models
+open ServerInspector.Models
 open Giraffe
 open Giraffe.GiraffeViewEngine
 open Microsoft.AspNetCore.Http

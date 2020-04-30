@@ -1,4 +1,4 @@
-module GiraffeWebApp.Models
+module ServerInspector.Models
 
 type Message =
     {

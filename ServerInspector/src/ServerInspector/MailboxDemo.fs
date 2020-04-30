@@ -1,4 +1,4 @@
-module GiraffeWebApp.MailboxDemo
+module ServerInspector.MailboxDemo
 
 // Hint: lineContainer and timer
 // will be initialized when this module is first used
